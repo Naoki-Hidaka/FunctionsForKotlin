@@ -45,4 +45,36 @@ class ListExtensionTest {
         val expect = listOf(1, 2, 3).tail()
         assertThat(3, `is`(expect))
     }
+
+    @Test
+    fun myMapTest() {
+        val expect = listOf(1, 2, 3).myMap { it * 2 }
+        assertThat(listOf(2,4,6), `is`(expect))
+    }
+
+    @Test
+    fun mapTest() {
+        val expect = listOf(1, 2, 3).map { it * 2 }
+        assertThat(listOf(2, 4, 6), `is`(expect))
+    }
+
+    @Test
+    fun myFilterTest() {
+        val expect = listOf(1,2,3,4,5,6).myFilter { it % 2 == 0 }
+        assertThat(listOf(2,4,6), `is`(expect))
+    }
+
+    @Test
+    fun myIndexedMap() {
+        val expect = listOf(1,2,3).indexedMap { index, item ->
+            item * index
+        }
+        assertThat(listOf(0,2,6), `is`(expect))
+    }
+
+    @Test
+    fun sumTest() {
+        val expect = listOf(1,2,3).sum()
+        assertThat(6, `is`(expect))
+    }
 }

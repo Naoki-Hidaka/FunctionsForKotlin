@@ -32,3 +32,26 @@ fun <T> List<T>.tail(): T {
     return this[this.size - 1]
 }
 
+fun <T, R> List<T>.myMap(operation: (T) -> R): List<R> =
+        this.fold(mutableListOf()) { acc, t ->
+            acc.add(operation(t))
+            acc
+        }
+
+fun <T> List<T>.myFilter(operation: (T) -> Boolean): List<T> =
+        this.fold(mutableListOf()) { acc, t ->
+            if (operation(t)) acc.add(t)
+            acc
+        }
+
+fun <T, R> List<T>.indexedMap(operation: (Int, T) -> R): List<R> =
+        this.foldIndexed(mutableListOf()) { index, acc, t ->
+            acc.add(operation(index, t))
+            acc
+        }
+
+fun List<Int>.sum() : Int =
+        this.fold(0) { acc, number ->
+            acc.plus(number)
+        }
+
