@@ -1,2 +1,2 @@
 # FunctionsForKotlin
-Kotlin functions inspired by Elm
+Kotlin functions inspired by Other Functional Language
