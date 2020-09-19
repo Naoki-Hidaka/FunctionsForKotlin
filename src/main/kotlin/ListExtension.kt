@@ -1,8 +1,8 @@
 fun <T> singleton(input: T): List<T> = listOf(input)
 
-fun <T> repeat(num: Int, input: T): List<T> {
+fun <T> repeat(count: Int, input: T): List<T> {
     val list = mutableListOf<T>()
-    for (i in 0 until num) {
+    for (i in 0 until count) {
         list.add(input)
     }
     return list.toList()
@@ -54,4 +54,3 @@ fun List<Int>.sum() : Int =
         this.fold(0) { acc, number ->
             acc.plus(number)
         }
-
